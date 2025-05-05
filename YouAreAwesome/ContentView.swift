@@ -73,7 +73,43 @@ struct ContentView: View {
                 lastSoundNumber = soundNumber
                 let soundName = "sound\(soundNumber)"
                 
-                playSound(soundName: soundName)
+                Button("Press Me!") {
+                    let messages = ["Bruno Mars",
+                                    "Tyler the Creator",
+                                    "Kendrick Lamar",
+                                    "Imagine Dragons",
+                                    "Kendrick Lamar"]
+                    
+                    _ = "image1"
+                    _ = "image2"
+                    _ = "image3"
+                    _ = "image4"
+                    _ = "image5"
+                    
+                    
+                    imageString = "image\(imageNumber)"
+                    imageNumber += 1
+                    
+                    if imageNumber > 5 {
+                        imageNumber = 1
+                    }
+                    message = messages[messageNumber]
+                    messageNumber += 1
+                    
+                    if messageNumber == messages.count {
+                        messageNumber = 0
+                    }
+                    
+                    var soundNumber: Int
+                    repeat {
+                        soundNumber = Int.random(in: 1...numberOfSounds)
+                    } while soundNumber == lastSoundNumber
+                    lastSoundNumber = soundNumber
+                    let soundName = "sound\(soundNumber)"
+                    if SoundIsOn {
+                        playSound(soundName: soundName)
+                    }
+                }
             }
             
         }
